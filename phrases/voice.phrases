@@ -1,0 +1,67 @@
+# Cancel sentence
+# For example, "four down no five down" would just do "five down".
+@cancel no:
+
+# Transcribe a sentence
+# For example, "scribe please type this".
+#@transcribe scribe: pen head -n 1 $NUMEN_STATE_DIR/transcripts
+@transcribe scribe: set numen_fmt echo normal \
+	pen $NUMEN_SCRIPTS_DIR/tweak; $NUMEN_SCRIPTS_DIR/transcripts | head -n 1
+
+# Transcribe a sentence formatted...
+
+# With the first letter uppercase
+@transcribe scrub: set numen_fmt echo sentence \
+	pen $NUMEN_SCRIPTS_DIR/tweak; $NUMEN_SCRIPTS_DIR/transcripts | head -n 1
+# With Each First Letter Uppercase
+@transcribe tight scribe: set numen_fmt echo title \
+	pen $NUMEN_SCRIPTS_DIR/tweak; $NUMEN_SCRIPTS_DIR/transcripts | head -n 1
+# with_underscrores_inbetween
+@transcribe snake: set numen_fmt echo snake \
+	pen $NUMEN_SCRIPTS_DIR/tweak; $NUMEN_SCRIPTS_DIR/transcripts | head -n 1
+# with-dashes-inbetween
+@transcribe dash: set numen_fmt echo dash \
+	pen $NUMEN_SCRIPTS_DIR/tweak; $NUMEN_SCRIPTS_DIR/transcripts | head -n 1
+# with.dots.inbetween
+@transcribe dot scribe: set numen_fmt echo dot \
+	pen $NUMEN_SCRIPTS_DIR/tweak; $NUMEN_SCRIPTS_DIR/transcripts | head -n 1
+# with, commas, inbetween
+@transcribe roh scribe: set numen_fmt echo list \
+	pen $NUMEN_SCRIPTS_DIR/tweak; $NUMEN_SCRIPTS_DIR/transcripts | head -n 1
+# with/slashes/inbetween
+@transcribe path scribe: set numen_fmt echo path \
+	pen $NUMEN_SCRIPTS_DIR/tweak; $NUMEN_SCRIPTS_DIR/transcripts | head -n 1
+# allsmashedtogether
+@transcribe kludge: set numen_fmt echo smash \
+	pen $NUMEN_SCRIPTS_DIR/tweak; $NUMEN_SCRIPTS_DIR/transcripts | head -n 1
+# camelCase
+@transcribe camel: set numen_fmt echo camel \
+	pen $NUMEN_SCRIPTS_DIR/tweak; $NUMEN_SCRIPTS_DIR/transcripts | head -n 1
+# PascalCase
+@transcribe pascal: set numen_fmt echo pascal \
+	pen $NUMEN_SCRIPTS_DIR/tweak; $NUMEN_SCRIPTS_DIR/transcripts | head -n 1
+# dot.camelCase
+@transcribe dot camel: set numen_fmt echo dotcamel \
+	pen $NUMEN_SCRIPTS_DIR/tweak; $NUMEN_SCRIPTS_DIR/transcripts | head -n 1
+# dot.PascalCase
+@transcribe dot pascal: set numen_fmt echo dotpascal \
+	pen $NUMEN_SCRIPTS_DIR/tweak; $NUMEN_SCRIPTS_DIR/transcripts | head -n 1
+# (You can also do "shout scribe" etc.)
+
+# Erase the transcription
+ditch: eval $NUMEN_SCRIPTS_DIR/transcripts | sed 's/./ BackSpace/g; s/^/press/; q'
+
+# Go to the start of the transcription
+trudge: eval $NUMEN_SCRIPTS_DIR/transcripts | sed 's/./ Left/g; s/^/press/; q'
+
+# Menus to type or choose another transcription result
+# They use the dmenu command (only works in X11) or the command specified
+# by $NUMEN_DMENU or $DMENU (you could use wmenu if you're on Wayland).
+transcripts: run $NUMEN_SCRIPTS_DIR/menu | numenc & \
+	run sleep 0.1
+change: run $NUMEN_SCRIPTS_DIR/menu change | numenc & \
+	run sleep 0.1
+
+
+# Ignore this, vosk-model-small-en-us-0.15 can output huh after a long silence.
+huh:

@@ -1,0 +1,35 @@
+# Navigate to the window in the given direction
+west: stick off \
+	press super+Left
+east: stick off \
+	press super+Right
+north: stick off \
+	press super+Up
+south: stick off \
+	press super+Down
+
+# Cycle round the windows
+cycle: stick off \
+	press super+c
+recycle: stick off \
+	press super+C
+
+# Close window
+exterminate: stick off \
+	press super+q
+
+# Toggle fullscreen
+screen: stick off \
+	press super+f
+
+# We can load nothing by not specifying a file
+talon sleep:  run notify-send "Numen paused" \
+              run echo -n > $NUMEN_STATE_DIR/paused \
+	      load 
+
+# These two are just for --gadget mode.
+
+# Switch to controlling the gadget
+@gadget shock gadget: handler uinput
+# Switch to controlling the host machine
+@gadget shock host: handler gadget
