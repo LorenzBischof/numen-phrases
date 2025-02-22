@@ -1,5 +1,9 @@
 # differences to talon:
 # vest -> void
+# jury -> jail
+# sit -> ice
+# harp -> ham
+# trap -> tea
 
 air: press a
 bat: press b
@@ -10,11 +14,13 @@ each: press e
 fine: press f
 gust: press g
 # hoof: press h
-harp: press h
-# ice: press i
-sit: press i
+# harp: press h # conflicts with 'up'
+ham: press h
+# sit: press i
+ice: press i
 # jive: press j
-jury: press j
+# jury: press j
+jail: press j
 # kid: press k
 crunch: press k
 # link: press l
@@ -27,10 +33,11 @@ pit: press p
 quench: press q
 red: press r
 sun: press s
-trap: press t
+# trap: press t # conflicts with troy
+tea: press t
 urge: press u
+# vest: press v # conflicts with west
 void: press v
-# vest: press v # could conflict with west
 # whiz: press w
 whale: press w
 plex: press x
@@ -49,13 +56,20 @@ eight: press 8
 nine: press 9
 
 ask: press question
-plus: press plus
-mine: press minus
+star: press asterisk
 tide: press asciitilde
-yell: press exclam
-quid: press dollar
 score: press underscore
-clause: press colon
+mine: press minus
+# bang: press exclam # conflicts with bat
+yell: press exclam
+colon: press colon
+dot: press period
+pipe: press bar
+tick: press grave
+slash: press slash
+
+plus: press plus
+quid: press dollar
 same: press semicolon
 wax: press parenleft
 wane: press parenright
@@ -65,18 +79,13 @@ bric: press bracketleft
 brac: press bracketright
 small: press less
 big: press greater
-star: press asterisk
 hash: press numbersign
 mood: press percent
 blunt: press asciicircum
 snail: press at
 gain: press ampersand
-vert: press bar
 spoke: press quotedbl
 mark: press apostrophe
-tick: press grave
-slash: press slash
 slope: press backslash
 list: press comma
-point: press period
 match: press equal

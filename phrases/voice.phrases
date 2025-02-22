@@ -5,7 +5,7 @@
 # Transcribe a sentence
 # For example, "scribe please type this".
 #@transcribe scribe: pen head -n 1 $NUMEN_STATE_DIR/transcripts
-@transcribe scribe: set numen_fmt echo normal \
+@transcribe say: set numen_fmt echo normal \
 	pen $NUMEN_SCRIPTS_DIR/tweak; $NUMEN_SCRIPTS_DIR/transcripts | head -n 1
 
 # Transcribe a sentence formatted...

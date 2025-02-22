@@ -1,5 +1,6 @@
 space: press space
 yes: press Return
+enter: press Return
 tab: press Tab
 scape: stick off \
 	press Escape
@@ -26,10 +27,7 @@ squeeze: run notify-send STICKING & \
 	stick on
 
 hack: press BackSpace
-mince: press BackSpace BackSpace
-toss: press Delete
-smite: press Delete Delete
-raze: press BackSpace BackSpace BackSpace BackSpace
+delete: press Delete
 # Delete a word (depending on the program)
 swipe: press ctrl+BackSpace
 
@@ -41,6 +39,22 @@ down: press Down
 # I use these to navigate words and to complete bits of shell autosuggestions
 stretch: press ctrl+Right
 wrench: press ctrl+Left
+
+tab last: press ctrl+shift+Tab
+tab next: press ctrl+Tab
+tab close: press ctrl+w
+tab new: press ctrl+t
+tab restore: press ctrl+shift+t
+go tab one: press alt+1
+go tab two: press alt+2
+go tab three: press alt+3
+go tab four: press alt+4
+go tab five: press alt+5
+go tab six: press alt+6
+go tab seven: press alt+7
+go tab sept: press alt+7
+go tab eight: press alt+8
+go tab final: press alt+9
 
 # PageDown, PageUp, Home, End
 page: press Next

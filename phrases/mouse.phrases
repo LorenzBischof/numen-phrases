@@ -1,5 +1,6 @@
 # Click
-mouse: click left
+touch: click left
+righty: click right
 
 # Center the cursor
 center: mouseto 0 0 \
