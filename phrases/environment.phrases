@@ -22,10 +22,7 @@ exterminate: stick off \
 screen: stick off \
 	press super+f
 
-# We can load nothing by not specifying a file
-talon sleep:  run notify-send "Numen paused" \
-              run echo -n > $NUMEN_STATE_DIR/paused \
-	      load 
+talon sleep:  run numen-sleep
 
 # These two are just for --gadget mode.
 
